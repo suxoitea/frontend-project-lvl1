@@ -9,4 +9,5 @@ jobs:
                 runs-on: ubuntu-latest
                 steps:
                         - name: test code
+                          run: make install
                           run: make lint
