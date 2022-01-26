@@ -1,8 +1,13 @@
 name: Run linter
-on: push
+
+on:
+        - push
+
 jobs:
-        my-job:
+        build:
+                
                 runs-on: ubuntu-latest
                 steps:
+                        - uses: actions/checkout@2
                         - name: test code
                           run: make lint
