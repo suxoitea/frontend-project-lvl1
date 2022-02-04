@@ -18,8 +18,8 @@ const greatestDivisor = (num1, num2) => {
 };
 
 const gameCommonDivisor = () => {
-  const num1 = getRandomCount();
-  const num2 = getRandomCount();
+  const num1 = getRandomCount(0, 20);
+  const num2 = getRandomCount(0, 20);
   const correctAnswer = String(greatestDivisor(num1, num2));
 
   const gameElements = [`${num1} ${num2}`, correctAnswer];

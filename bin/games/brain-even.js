@@ -12,7 +12,7 @@ const evenParity = (num) => {
 };
 
 const gameEven = () => {
-  const numRandom = getRandomCount();
+  const numRandom = getRandomCount(0, 100);
   const correctAnswer = evenParity(numRandom);
 
   const gameElemets = [numRandom, correctAnswer];

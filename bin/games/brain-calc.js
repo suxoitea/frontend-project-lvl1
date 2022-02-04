@@ -10,14 +10,14 @@ const getRandomOperation = () => {
     ['-', (x, y) => x - y],
     ['*', (x, y) => x * y],
   ];
-  const randomNum = Math.floor(Math.random() * mathOperations.length);
+  const randomNum = getRandomCount(0, mathOperations.length - 1);
 
   return mathOperations[randomNum];
 };
 
 const gameCalc = () => {
-  const num1 = getRandomCount();
-  const num2 = getRandomCount();
+  const num1 = getRandomCount(0, 10);
+  const num2 = getRandomCount(0, 10);
   const operator = getRandomOperation();
 
   const gameElemets = [`${num1} ${operator[0]} ${num2}`];

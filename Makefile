@@ -22,3 +22,6 @@ brain-calc:
 
 brain-gcd:
 	node bin/games/brain-gcd.js
+
+brain-progressin:
+	node bin/games/brain-progression.js
