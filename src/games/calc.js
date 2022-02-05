@@ -1,8 +1,6 @@
-#!/usr/bin/env node
-import executeGame from '../../src/index.js';
-import getRandomCount from '../../src/randomizer-num.js';
+import getRandomCount from '../randomizer-num.js';
 
-const rulesGame = 'What is the result of the expression?';
+export const rules = 'What is the result of the expression?';
 
 const getRandomOperation = () => {
   const mathOperations = [
@@ -15,7 +13,7 @@ const getRandomOperation = () => {
   return mathOperations[randomNum];
 };
 
-const gameCalc = () => {
+export const gameCalc = () => {
   const num1 = getRandomCount(0, 10);
   const num2 = getRandomCount(0, 10);
   const operator = getRandomOperation();
@@ -27,5 +25,3 @@ const gameCalc = () => {
 
   return gameElemets;
 };
-
-executeGame(rulesGame, gameCalc);

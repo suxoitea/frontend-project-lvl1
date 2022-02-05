@@ -1,8 +1,6 @@
-#!/usr/bin/env node
-import getRandomCount from '../../src/randomizer-num.js';
-import executeGame from '../../src/index.js';
+import getRandomCount from '../randomizer-num.js';
 
-const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+export const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrimeNumber = (num) => {
   let divisionsCount = 0;
@@ -23,7 +21,7 @@ const isPrimeNumber = (num) => {
   return 'yes';
 };
 
-const gamePrime = () => {
+export const gamePrime = () => {
   const num = getRandomCount(0, 20);
   const correctAnswer = isPrimeNumber(num);
 
@@ -31,5 +29,3 @@ const gamePrime = () => {
 
   return gameElements;
 };
-
-executeGame(rules, gamePrime);

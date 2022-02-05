@@ -1,8 +1,6 @@
-#!/usr/bin/env node
-import getRandomCount from '../../src/randomizer-num.js';
-import executeGame from '../../src/index.js';
+import getRandomCount from '../randomizer-num.js';
 
-const rules = 'What number is missing in the progression?';
+export const rules = 'What number is missing in the progression?';
 
 const getProgression = (startNum, multiplicator, length, hiddenIndex) => {
   const progresNumbers = [];
@@ -16,7 +14,7 @@ const getProgression = (startNum, multiplicator, length, hiddenIndex) => {
   return progresNumbers.join(' ');
 };
 
-const gameProgressin = () => {
+export const gameProgressin = () => {
   const firstCount = getRandomCount(0, 20);
   const lengthProgression = getRandomCount(5, 15);
   const multiplicator = getRandomCount(1, 10);
@@ -29,5 +27,3 @@ const gameProgressin = () => {
 
   return gameElements;
 };
-
-executeGame(rules, gameProgressin);

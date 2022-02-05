@@ -1,8 +1,6 @@
-#!/usr/bin/env node
-import getRandomCount from '../../src/randomizer-num.js';
-import executeGame from '../../src/index.js';
+import getRandomCount from '../randomizer-num.js';
 
-const rules = 'Find the greatest common divisor of given numbers.';
+export const rules = 'Find the greatest common divisor of given numbers.';
 
 const greatestDivisor = (num1, num2) => {
   if (num1 === 1 || num2 === 1) {
@@ -17,7 +15,7 @@ const greatestDivisor = (num1, num2) => {
   return iter(num1);
 };
 
-const gameCommonDivisor = () => {
+export const gameCommonDivisor = () => {
   const num1 = getRandomCount(0, 20);
   const num2 = getRandomCount(0, 20);
   const correctAnswer = String(greatestDivisor(num1, num2));
@@ -26,5 +24,3 @@ const gameCommonDivisor = () => {
 
   return gameElements;
 };
-
-executeGame(rules, gameCommonDivisor);
