@@ -1,4 +1,4 @@
-import getRandomCount from '../randomizer-num.js';
+import getRandomNumber from '../randomizer-num.js';
 
 export const rules = 'What number is missing in the progression?';
 
@@ -15,10 +15,10 @@ const getProgression = (startNum, multiplicator, length, hiddenIndex) => {
 };
 
 export const gameProgressin = () => {
-  const firstCount = getRandomCount(0, 20);
-  const lengthProgression = getRandomCount(5, 15);
-  const multiplicator = getRandomCount(1, 10);
-  const hiddenIndex = getRandomCount(0, lengthProgression - 1);
+  const firstCount = getRandomNumber(0, 20);
+  const lengthProgression = getRandomNumber(5, 15);
+  const multiplicator = getRandomNumber(1, 10);
+  const hiddenIndex = getRandomNumber(0, lengthProgression - 1);
 
   const correctAnswer = firstCount + (multiplicator * hiddenIndex);
   const progression = getProgression(firstCount, multiplicator, lengthProgression, hiddenIndex);

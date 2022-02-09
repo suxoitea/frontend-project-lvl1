@@ -1,4 +1,4 @@
-import getRandomCount from '../randomizer-num.js';
+import getRandomNumber from '../randomizer-num.js';
 
 export const rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
@@ -10,7 +10,7 @@ const evenParity = (num) => {
 };
 
 export const gameEven = () => {
-  const numRandom = getRandomCount(0, 100);
+  const numRandom = getRandomNumber(0, 100);
   const correctAnswer = evenParity(numRandom);
 
   const gameElemets = [numRandom, correctAnswer];

@@ -1,4 +1,4 @@
-import getRandomCount from '../randomizer-num.js';
+import getRandomNumber from '../randomizer-num.js';
 
 export const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
@@ -22,7 +22,7 @@ const isPrimeNumber = (num) => {
 };
 
 export const gamePrime = () => {
-  const num = getRandomCount(0, 20);
+  const num = getRandomNumber(0, 20);
   const correctAnswer = isPrimeNumber(num);
 
   const gameElements = [num, correctAnswer];
