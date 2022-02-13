@@ -2,26 +2,25 @@ import getRandomNumber from '../randomizer-num.js';
 
 export const rules = 'What is the result of the expression?';
 
-const getRandomOperation = () => {
+const getRandomOperation = (randomIndex) => {
   const mathOperations = [
     ['+', (x, y) => x + y],
     ['-', (x, y) => x - y],
     ['*', (x, y) => x * y],
   ];
-  const randomNum = getRandomNumber(0, mathOperations.length - 1);
 
-  return mathOperations[randomNum];
+  return mathOperations[randomIndex];
 };
 
 export const gameCalc = () => {
   const num1 = getRandomNumber(0, 10);
   const num2 = getRandomNumber(0, 10);
-  const operator = getRandomOperation();
+  const randomIndex = getRandomNumber(0, 3);
 
-  const gameElemets = [`${num1} ${operator[0]} ${num2}`];
-  const correctAnswer = operator[1](num1, num2);
+  const [operator, calculate] = getRandomOperation(randomIndex);
 
-  gameElemets[1] = String(correctAnswer);
+  const question = `${num1} ${operator} ${num2}`;
+  const answer = String(calculate(num1, num2));
 
-  return gameElemets;
+  return [question, answer];
 };

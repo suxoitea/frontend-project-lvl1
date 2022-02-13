@@ -6,7 +6,7 @@ const isPrimeNumber = (num) => {
   let divisionsCount = 0;
 
   if (num <= 1) {
-    return 'no';
+    return false;
   }
 
   for (let division = 1; division <= num; division += 1) {
@@ -14,18 +14,18 @@ const isPrimeNumber = (num) => {
       divisionsCount += 1;
     }
     if (divisionsCount > 2) {
-      return 'no';
+      return false;
     }
   }
 
-  return 'yes';
+  return true;
 };
 
 export const gamePrime = () => {
-  const num = getRandomNumber(0, 20);
-  const correctAnswer = isPrimeNumber(num);
+  const numRandom = getRandomNumber(0, 20);
+  const correctAnswer = isPrimeNumber(numRandom) ? 'yes' : 'no';
 
-  const gameElements = [num, correctAnswer];
+  const gameElements = [numRandom, correctAnswer];
 
   return gameElements;
 };
