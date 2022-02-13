@@ -15,12 +15,14 @@ const getRandomOperation = (randomIndex) => {
 export const gameCalc = () => {
   const num1 = getRandomNumber(0, 10);
   const num2 = getRandomNumber(0, 10);
-  const randomIndex = getRandomNumber(0, 3);
+  const randomIndex = getRandomNumber(0, 2);
 
-  const [operator, calculate] = getRandomOperation(randomIndex);
+  const [operator, calc] = getRandomOperation(randomIndex);
 
-  const question = `${num1} ${operator} ${num2}`;
-  const answer = String(calculate(num1, num2));
+  const gameElements = [`${num1} ${operator} ${num2}`];
+  const correctAnswer = calc(num1, num2);
 
-  return [question, answer];
+  gameElements[1] = String(correctAnswer);
+
+  return gameElements;
 };
