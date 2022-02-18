@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 import runGameProcess from '../src/index.js';
-import { rules, gamePrime } from '../src/games/prime.js';
+import { rules, generateGamePrime } from '../src/games/prime.js';
 
-runGameProcess(rules, gamePrime);
+runGameProcess(rules, generateGamePrime);

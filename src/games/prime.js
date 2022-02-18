@@ -21,11 +21,9 @@ const isPrimeNumber = (num) => {
   return true;
 };
 
-export const gamePrime = () => {
-  const numRandom = getRandomNumber(0, 20);
-  const correctAnswer = isPrimeNumber(numRandom) ? 'yes' : 'no';
+export const generateGamePrime = () => {
+  const question = getRandomNumber(0, 20);
+  const answer = isPrimeNumber(question) ? 'yes' : 'no';
 
-  const gameElements = [numRandom, correctAnswer];
-
-  return gameElements;
+  return [question, answer];
 };

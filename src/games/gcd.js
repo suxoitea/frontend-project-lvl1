@@ -15,12 +15,12 @@ const greatestDivisor = (num1, num2) => {
   return iter(num1);
 };
 
-export const gameCommonDivisor = () => {
-  const num1 = getRandomNumber(1, 20);
-  const num2 = getRandomNumber(1, 20);
-  const correctAnswer = String(greatestDivisor(num1, num2));
+export const generateGameCommonDivisor = () => {
+  const firstRandomNum = getRandomNumber(1, 20);
+  const secondRandomNum = getRandomNumber(1, 20);
 
-  const gameElements = [`${num1} ${num2}`, correctAnswer];
+  const question = `${firstRandomNum} ${secondRandomNum}`;
+  const answer = String(greatestDivisor(firstRandomNum, secondRandomNum));
 
-  return gameElements;
+  return [question, answer];
 };
