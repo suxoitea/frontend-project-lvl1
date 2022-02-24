@@ -1,6 +1,7 @@
 import getRandomNumber from '../randomizer-num.js';
+import runGameProcess from '../index.js';
 
-export const rules = 'Find the greatest common divisor of given numbers.';
+const rules = 'Find the greatest common divisor of given numbers.';
 
 const greatestDivisor = (num1, num2) => {
   if (num1 === 1 || num2 === 1) {
@@ -15,7 +16,7 @@ const greatestDivisor = (num1, num2) => {
   return iter(num1);
 };
 
-export const generateGameCommonDivisor = () => {
+const generateGameCommonDivisor = () => {
   const firstRandomNum = getRandomNumber(1, 20);
   const secondRandomNum = getRandomNumber(1, 20);
 
@@ -24,3 +25,5 @@ export const generateGameCommonDivisor = () => {
 
   return [question, answer];
 };
+
+export default () => runGameProcess(rules, generateGameCommonDivisor);

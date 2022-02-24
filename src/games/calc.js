@@ -1,6 +1,7 @@
 import getRandomNumber from '../randomizer-num.js';
+import runGameProcess from '../index.js';
 
-export const rules = 'What is the result of the expression?';
+const rules = 'What is the result of the expression?';
 
 const getRandomOperation = (randomIndex) => {
   const mathOperations = [
@@ -12,7 +13,7 @@ const getRandomOperation = (randomIndex) => {
   return mathOperations[randomIndex];
 };
 
-export const generateGameCalc = () => {
+const generateGameCalc = () => {
   const firstRandomNum = getRandomNumber(0, 10);
   const secondRandomNum = getRandomNumber(0, 10);
   const randomIndex = getRandomNumber(0, 2);
@@ -24,3 +25,5 @@ export const generateGameCalc = () => {
 
   return [question, answer];
 };
+
+export default () => runGameProcess(rules, generateGameCalc);

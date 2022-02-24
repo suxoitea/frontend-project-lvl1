@@ -1,6 +1,7 @@
 import getRandomNumber from '../randomizer-num.js';
+import runGameProcess from '../index.js';
 
-export const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrimeNumber = (num) => {
   let divisionsCount = 0;
@@ -21,9 +22,11 @@ const isPrimeNumber = (num) => {
   return true;
 };
 
-export const generateGamePrime = () => {
+const generateGamePrime = () => {
   const question = getRandomNumber(0, 20);
   const answer = isPrimeNumber(question) ? 'yes' : 'no';
 
   return [question, answer];
 };
+
+export default () => runGameProcess(rules, generateGamePrime);
